@@ -173,8 +173,8 @@ bindsym $mod+r mode "resize"
 #}
 
 assign [class="konsole"] $ws1
-assign [class="Firefox"] $ws2
-assign [class="Thunderbird"] $ws3
+assign [class="Firefox"] $ws3
+assign [class="Thunderbird"] $ws4
 assign [class="Spotify"] $ws4
 exec setxkbmap tr
 exec konsole

@@ -2,6 +2,8 @@ call plug#begin('~/.vim/plugged')
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'itchyny/lightline.vim'
+Plug 'itchyny/calendar.vim'
+Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
 call plug#end()
 set splitbelow splitright 
 set wildmode=longest,list,full
@@ -20,20 +22,16 @@ let g:limelight_bop = '^\s'
 let g:limelight_eop = '\ze\n^\s'
 let g:limelight_conceal_guifg = '#777777'
 
-let g:lightline = {
-      \ 'colorscheme': 'one',
-      \ }
-
-let g:lightline = {
-      \ 'colorscheme': 'wombat',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'readonly', 'filename', 'modified', 'charvaluehex' ] ]
-      \ },
-      \ 'component': {
-      \   'charvaluehex': '0x%B'
-      \ },
-      \ }
+let g:lightline = { 'colorscheme': 'one', }
+if has('autocmd')
+        augroup coloroverride
+                    autocmd!
+                            autocmd ColorScheme * highlight LineNr  ctermfg=DarkGrey guifg=DarkGrey " Override LineNr
+                                    autocmd ColorScheme * highlight CursorLineNr  ctermfg=White guifg=White " Override CursorLineNr
+                                        augroup END
+                                    endif
+                                    silent! colorscheme wombat " Custom color scheme
+let g:lightline = { 'colorscheme': 'wombat', 'active': {   'left': [ [ 'mode', 'paste' ],             [ 'readonly', 'filename', 'modified', 'charvaluehex' ] ] }, 'component': {   'charvaluehex': '0x%B' }, }
 
 
 filetype plugin on
@@ -41,6 +39,10 @@ filetype indent on
 
 
 let mapleader = " "
+
+"insert suffering from success meme here
+"i type so fast that when i quit it registers q as Q (since i use shift to make the :) 
+command! Q :q
 
 " Fast saving
 nmap <leader>w :w!<cr>
@@ -364,3 +366,13 @@ function! VisualSelection(direction, extra_filter) range
     let @/ = l:pattern
     let @" = l:saved_reg
 endfunction
+
+let g:calendar_google_calendar = 1
+let g:calendar_google_task = 1
+
+let g:vimwiki_list_ignore_newline = 0
+
+let wiki = {}
+let wiki.path = '~/vimwiki/'
+let wiki.nested_syntaxes = {'python': 'python', 'c++': 'cpp'}
+let g:vimwiki_list = [wiki]
