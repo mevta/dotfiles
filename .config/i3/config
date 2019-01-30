@@ -9,7 +9,9 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
+
 set $mod Mod4
+
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -95,16 +97,16 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1: Terminal"
-set $ws2 "2: Firefox"
-set $ws3 "3: Thunderbird"
+set $ws1 "1: "
+set $ws2 "2: "
+set $ws3 "3: "
 set $ws4 "4:"
 set $ws5 "5:"
 set $ws6 "6:"
 set $ws7 "7:"
 set $ws8 "8:"
 set $ws9 "9:"
-set $ws10 "10: Spotify"
+set $ws10 "10: "
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -175,13 +177,17 @@ bindsym $mod+r mode "resize"
 assign [class="konsole"] $ws1
 assign [class="Firefox"] $ws3
 assign [class="Thunderbird"] $ws4
-assign [class="Spotify"] $ws4
+
+#assign [class="Spotify"] $ws4
+
 exec setxkbmap tr
 exec konsole
 exec firefox
 exec thunderbird
 exec spotify
-exec_always feh --bg-scale /home/mevta/Pics/Wallpapers/chinatown.jpg
+
+#background
+#exec_always feh --bg-scale /home/mevta/Pics/Wallpapers/chinatown.jpg
 
 # Pulse Audio controls
 bindsym --release XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
@@ -213,10 +219,10 @@ exec_always --no-startup-id ~/.config/scripts/i3listen.py
 #bindsym XF86PowerOff exec --no-startup-id prompt "Shutdown computer?" "$shutdown"
 
 bindsym $mod+t exec polybar-msg cmd toggle
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id $HOME/.config/polybar/launchpolybar.sh
 
 #bindsym Control+$mod+l exec i3lock
 # lock i3
-bindsym Control+$mod+l  exec "~/.config/scripts/ricklock.sh"
-bindsym Control+$mod+m  exec "/home/mevta/Desktop/scripts/dmenuMount"
-bindsym Control+$mod+u  exec "/home/mevta/Desktop/scripts/dmenuUmount"
+#bindsym Control+$mod+l  exec "~/.config/scripts/ricklock.sh"
+#bindsym Control+$mod+m  exec "/home/mevta/Desktop/scripts/dmenuMount"
+#bindsym Control+$mod+u  exec "/home/mevta/Desktop/scripts/dmenuUmount"
