@@ -9,6 +9,9 @@ Plug 'junegunn/limelight.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'itchyny/calendar.vim'
 Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
+Plug 'ap/vim-css-color'
+Plug 'godlygeek/tabular'
+Plug 'chrisbra/colorizer'
 call plug#end()
 set splitbelow splitright 
 set wildmode=longest,list,full
@@ -54,7 +57,6 @@ nmap <leader>w :w!<cr>
 
 " :W sudo saves the file 
 " (useful for handling the permission-denied error)
-command W w !sudo tee % > /dev/null
 
 set clipboard=unnamedplus
 " Set 7 lines to the cursor - when moving vertically using j/k
