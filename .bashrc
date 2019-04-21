@@ -11,6 +11,9 @@ bind -m vi-insert "\C-a.":beginning-of-line
 bind -m vi-insert "\C-e.":end-of-line
 bind -m vi-insert "\C-w.":backward-kill-word
 
+set runtimepath=~/.vim,$VIM/vimiles,$VIMRUNTIME,$VIM/vimfiles/after,~/.vim/after
+export PATH="$PATH:`yarn global bin`"
+export PATH="$PATH:/opt/yarn-[version]/bin"
 colors() {
         local fgc bgc vals seq0
 

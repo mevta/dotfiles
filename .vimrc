@@ -12,6 +12,7 @@ Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
 Plug 'ap/vim-css-color'
 Plug 'godlygeek/tabular'
 Plug 'chrisbra/colorizer'
+Plug 'pangloss/vim-javascript'
 call plug#end()
 set splitbelow splitright 
 set wildmode=longest,list,full
@@ -21,7 +22,7 @@ set nocompatible
 set history=500
 
 syntax on
-
+let g:javascript_plugin_jsdoc = 1
 let g:limelight_default_coefficient = 0.7
 let g:limelight_conceal_ctermfg = 'gray'
 let g:limelight_conceal_ctermfg = 240
@@ -45,12 +46,15 @@ let g:lightline = { 'colorscheme': 'wombat', 'active': {   'left': [ [ 'mode', '
 filetype plugin on
 filetype indent on
 
+set grepprg=gre\ -nH\ $*
+let g:tex_flavor = "latex"
 
 let mapleader = " "
 
 "insert suffering from success meme here
 "i type so fast that when i quit it registers q as Q (since i use shift to make the :) 
 command! Q :q
+command! W :w
 
 " Fast saving
 nmap <leader>w :w!<cr>

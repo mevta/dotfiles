@@ -59,7 +59,7 @@ font-2 = FontAwesome5Brands:style=Solid:pixelsize=10:antialias=false;3
 
 modules-left = bspwm i3
 modules-center = 
-modules-right = filesystem screen alsa pulseaudio memory cpu wlan  battery temperature date powermenu
+modules-right = screen alsa pulseaudio memory cpu wlan temperature date powermenu
 
 tray-position = right
 tray-padding = 0
