@@ -176,18 +176,15 @@ bindsym $mod+r mode "resize"
 
 assign [class="konsole"] $ws1
 assign [class="Firefox"] $ws3
-assign [class="Thunderbird"] $ws4
 
 #assign [class="Spotify"] $ws4
 
 exec setxkbmap tr
 exec konsole
 exec firefox
-exec thunderbird
-exec spotify
 
 #background
-exec_always feh --bg-scale /home/mevta/Desktop/somecoolstuff/wallpaper/arch-anatomy-1366x768.jpg
+exec_always feh --bg-scale /home/mevta/Pictures/Wallpapers/saitama_cctv.png
 
 # Pulse Audio controls
 bindsym --release XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
@@ -222,7 +219,7 @@ exec_always --no-startup-id $HOME/.config/polybar/launchpolybar.sh
 
 #bindsym Control+$mod+l exec i3lock
 # lock i3
-bindsym Control+$mod+l  exec "/home/mevta/Desktop/repositories/scripts/rickLock/rickLock.sh"
+bindsym Control+$mod+l  exec "/home/mevta/Desktop/repositories/rickLock/rickLock.sh"
 #bindsym Control+$mod+m  exec "/home/mevta/Desktop/scripts/dmenuMount"
 #bindsym Control+$mod+u  exec "/home/mevta/Desktop/scripts/dmenuUmount"
 
